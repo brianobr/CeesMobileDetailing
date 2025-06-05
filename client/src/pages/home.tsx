@@ -79,24 +79,24 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 glass-effect z-50 transition-all duration-300 border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-poppins font-bold gradient-text tracking-tight">Cee's Mobile Detailing</h1>
+              <h1 className="text-xl font-poppins font-bold text-primary">Cee's Mobile Detailing</h1>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-center space-x-1">
+              <div className="ml-10 flex items-baseline space-x-4">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                       activeSection === item.id 
-                        ? 'bg-slate-900 text-white shadow-lg' 
-                        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                        ? 'text-primary font-semibold' 
+                        : 'text-secondary hover:text-primary'
                     }`}
                   >
                     {item.label}
@@ -140,9 +140,10 @@ export default function Home() {
           </div>
         )}
       </nav>
+
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-20">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40"></div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-blue-800 text-white pt-16">
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div 
           className="absolute inset-0" 
           style={{
@@ -152,136 +153,107 @@ export default function Home() {
           }}
         ></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm mb-8">
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-            Available 24/7 • Premium Mobile Service
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-8 leading-tight tracking-tight">
-            <span className="block">Premium Mobile</span>
-            <span className="block bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Car Detailing</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-poppins font-bold mb-6 leading-tight">
+            Premium Mobile Car Detailing
           </h1>
-          
-          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-200 font-light">
-            Professional car detailing that comes to you. We bring showroom quality results directly to your doorstep.
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            Professional car detailing and wash services that come to you. We bring showroom quality results to your doorstep.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button 
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 modern-shadow-lg border-0"
+              className="bg-accent hover:bg-yellow-500 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
-              <span className="flex items-center gap-2">
-                <i className="fas fa-calendar-check"></i>
-                Book Service Now
-              </span>
+              Book Service Now
             </Button>
             <Button
               variant="outline"
               size="lg"
               asChild
-              className="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white hover:text-slate-900 text-white font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-300"
+              className="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200"
             >
-              <a href="tel:+13128984141" className="flex items-center gap-3">
+              <a href="tel:+13128984141" className="flex items-center gap-2">
                 <i className="fas fa-phone"></i>
                 Call (312) 898-4141
               </a>
             </Button>
           </div>
-          
-          <div className="flex justify-center items-center gap-12 text-sm text-slate-300">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                <i className="fas fa-clock text-xs"></i>
-              </div>
+          <div className="flex justify-center items-center gap-8 text-sm opacity-90">
+            <div className="flex items-center gap-2">
+              <i className="fas fa-clock"></i>
               <span>Open 24 Hours Most Days</span>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                <i className="fas fa-mobile-alt text-xs"></i>
-              </div>
+            <div className="flex items-center gap-2">
+              <i className="fas fa-mobile-alt"></i>
               <span>Mobile Service</span>
             </div>
           </div>
         </div>
       </section>
+
       {/* About Section */}
-      <section id="about" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-6">
-              About Our Service
-            </div>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-slate-900 mb-6 tracking-tight">About Cee's Mobile Detailing</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Professional car detailing and wash services with a commitment to excellence and customer satisfaction.</p>
+      <section id="about" className="py-20 bg-neutral">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">About Cee's Mobile Detailing</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Professional car detailing and wash services with a commitment to excellence and customer satisfaction.</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 to-slate-100 rounded-3xl transform rotate-3"></div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
               <img 
                 src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Professional car detailing service" 
-                className="relative rounded-3xl modern-shadow-lg w-full h-auto"
+                className="rounded-xl shadow-lg w-full h-auto"
               />
             </div>
             
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-3xl font-poppins font-bold text-slate-900 mb-4 tracking-tight">Your Trusted Mobile Car Care Specialists</h3>
-                <p className="text-lg text-slate-600 leading-relaxed font-light">
-                  At Cee's Mobile Detailing and Car Wash, we bring professional automotive care directly to your location. Our experienced team uses premium products and techniques to restore and protect your vehicle's appearance.
-                </p>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-poppins font-semibold text-secondary">Your Trusted Mobile Car Care Specialists</h3>
+              <p className="text-gray-600 leading-relaxed">
+                At Cee's Mobile Detailing and Car Wash, we bring professional automotive care directly to your location. Our experienced team uses premium products and techniques to restore and protect your vehicle's appearance.
+              </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <i className="fas fa-award text-white text-lg"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 text-lg mb-1">Premium Quality</h4>
-                      <p className="text-slate-600">Professional-grade products and techniques</p>
-                    </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <i className="fas fa-award text-white"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary">Premium Quality</h4>
+                    <p className="text-sm text-gray-600">Professional-grade products</p>
                   </div>
                 </div>
                 
-                <div className="group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <i className="fas fa-clock text-white text-lg"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 text-lg mb-1">Convenient Hours</h4>
-                      <p className="text-slate-600">Open 24 hours most days</p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                    <i className="fas fa-clock text-white"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary">Convenient Hours</h4>
+                    <p className="text-sm text-gray-600">Open 24 hours most days</p>
                   </div>
                 </div>
                 
-                <div className="group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-600 to-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <i className="fas fa-mobile-alt text-white text-lg"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 text-lg mb-1">Mobile Service</h4>
-                      <p className="text-slate-600">We come to you anywhere</p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <i className="fas fa-mobile-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary">Mobile Service</h4>
+                    <p className="text-sm text-gray-600">We come to you</p>
                   </div>
                 </div>
                 
-                <div className="group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <i className="fas fa-handshake text-white text-lg"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 text-lg mb-1">Satisfaction Guaranteed</h4>
-                      <p className="text-slate-600">100% customer satisfaction</p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                    <i className="fas fa-handshake text-white"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-secondary">Satisfaction Guaranteed</h4>
+                    <p className="text-sm text-gray-600">100% customer focus</p>
                   </div>
                 </div>
               </div>
@@ -289,15 +261,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Services Section */}
-      <section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-6">
-              Our Services
-            </div>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-slate-900 mb-6 tracking-tight">Premium Detailing Services</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Complete mobile car detailing and wash services tailored to keep your vehicle looking its best.</p>
+      <section id="services" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">Our Services</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Complete mobile car detailing and wash services tailored to keep your vehicle looking its best.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -307,84 +277,79 @@ export default function Home() {
                 title: "Exterior Detailing",
                 description: "Complete exterior wash, clay bar treatment, polishing, and protective wax application for a showroom finish.",
                 features: ["Hand wash and dry", "Clay bar treatment", "Paint correction", "Wax and sealant application"],
-                gradient: "from-slate-900 to-slate-700"
+                color: "bg-primary"
               },
               {
                 icon: "fas fa-chair",
                 title: "Interior Detailing", 
                 description: "Deep cleaning and conditioning of all interior surfaces including seats, carpets, dashboard, and trim.",
                 features: ["Vacuum and steam cleaning", "Leather conditioning", "Dashboard and trim care", "Glass cleaning"],
-                gradient: "from-indigo-600 to-indigo-500"
+                color: "bg-accent"
               },
               {
                 icon: "fas fa-star",
                 title: "Full Detail Package",
                 description: "Complete interior and exterior detailing service for the ultimate car care experience.",
                 features: ["Complete exterior detail", "Complete interior detail", "Engine bay cleaning", "Tire and rim care"],
-                gradient: "from-emerald-600 to-emerald-500"
+                color: "bg-green-500"
               },
               {
                 icon: "fas fa-tint",
                 title: "Express Wash",
                 description: "Quick and efficient wash service perfect for regular maintenance between full details.",
                 features: ["Exterior wash and rinse", "Wheel and tire cleaning", "Quick interior vacuum", "Window cleaning"],
-                gradient: "from-purple-600 to-purple-500"
+                color: "bg-purple-500"
               },
               {
                 icon: "fas fa-shield-alt",
                 title: "Paint Protection",
                 description: "Advanced protective coatings and treatments to preserve your vehicle's paint and finish.",
                 features: ["Ceramic coating application", "Paint protection film", "Long-term protection", "UV damage prevention"],
-                gradient: "from-red-600 to-red-500"
+                color: "bg-red-500"
               },
               {
                 icon: "fas fa-calendar-check",
                 title: "Maintenance Plans",
                 description: "Regular scheduled detailing services to keep your vehicle in pristine condition year-round.",
                 features: ["Weekly wash services", "Monthly detail packages", "Seasonal protection", "Priority scheduling"],
-                gradient: "from-amber-600 to-amber-500"
+                color: "bg-indigo-500"
               }
             ].map((service, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 modern-shadow hover:-translate-y-2 bg-white">
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <Card key={index} className="hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className={`w-16 h-16 ${service.color} rounded-full flex items-center justify-center mb-4`}>
                     <i className={`${service.icon} text-white text-2xl`}></i>
                   </div>
-                  <h3 className="text-2xl font-poppins font-bold text-slate-900 mb-4 tracking-tight">{service.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed font-light">{service.description}</p>
-                  <div className="space-y-3">
+                  <h3 className="text-xl font-poppins font-semibold text-secondary mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-indigo-600 rounded-full flex-shrink-0"></div>
-                        <span className="text-slate-700 font-medium">{feature}</span>
-                      </div>
+                      <li key={idx}>• {feature}</li>
                     ))}
-                  </div>
+                  </ul>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Button 
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-4 px-10 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 modern-shadow-lg border-0"
+              className="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Get a Quote Today
             </Button>
           </div>
         </div>
       </section>
+
       {/* Reviews Section */}
-      <section id="reviews" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-6">
-              Customer Reviews
-            </div>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-slate-900 mb-6 tracking-tight">What Our Customers Say</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Don't just take our word for it. Here's what our satisfied customers have to say about our mobile detailing services.</p>
+      <section id="reviews" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">What Our Customers Say</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say about our mobile detailing services.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -435,7 +400,7 @@ export default function Home() {
               <Card key={index} className="bg-white shadow-lg border border-gray-100">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="flex text-amber-400">
+                    <div className="flex text-yellow-400">
                       {[...Array(review.rating)].map((_, i) => (
                         <i key={i} className="fas fa-star"></i>
                       ))}
@@ -448,7 +413,7 @@ export default function Home() {
                       <i className="fas fa-user text-white"></i>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[#0f172a]">{review.name}</h4>
+                      <h4 className="font-semibold text-secondary">{review.name}</h4>
                       <p className="text-sm text-gray-600">{review.title}</p>
                     </div>
                   </div>
@@ -459,28 +424,26 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <div className="inline-flex items-center gap-4 bg-white rounded-lg px-6 py-4 shadow-lg">
-              <div className="flex text-amber-400 text-xl">
+              <div className="flex text-yellow-400 text-xl">
                 {[...Array(5)].map((_, i) => (
                   <i key={i} className="fas fa-star"></i>
                 ))}
               </div>
               <div className="text-left">
-                <div className="font-semibold text-[#0f172a]">4.9/5 Average Rating</div>
+                <div className="font-semibold text-secondary">4.9/5 Average Rating</div>
                 <div className="text-sm text-gray-600">Based on 150+ customer reviews</div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-6">
-              Get In Touch
-            </div>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-slate-900 mb-6 tracking-tight">Ready to Book Your Service?</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Ready to give your car the care it deserves? Contact us today to schedule your mobile detailing service.</p>
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">Get In Touch</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Ready to give your car the care it deserves? Contact us today to schedule your mobile detailing service.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -548,10 +511,10 @@ export default function Home() {
             </div>
 
             {/* Contact Form */}
-            <Card className="border-0 modern-shadow-lg bg-white">
-              <CardContent className="p-10">
-                <h3 className="text-3xl font-poppins font-bold text-slate-900 mb-8 tracking-tight">Request a Quote</h3>
-                <form onSubmit={handleFormSubmit} className="space-y-8">
+            <Card className="bg-gray-50">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-poppins font-semibold text-secondary mb-6">Request a Quote</h3>
+                <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">First Name</Label>
@@ -650,16 +613,16 @@ export default function Home() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-300 transform hover:scale-[1.02] modern-shadow-lg border-0"
+                    className="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg text-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg"
                   >
                     Request Quote
                   </Button>
                 </form>
 
-                <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-                  <p className="text-slate-600 mb-4 font-light">Prefer to call directly?</p>
-                  <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 border-0">
-                    <a href="tel:+13128984141" className="inline-flex items-center gap-3">
+                <div className="mt-6 pt-6 border-t border-gray-200 text-center">
+                  <p className="text-gray-600 mb-3">Prefer to call directly?</p>
+                  <Button asChild className="bg-accent hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105">
+                    <a href="tel:+13128984141" className="inline-flex items-center gap-2">
                       <i className="fas fa-phone"></i>
                       Call (312) 898-4141
                     </a>
@@ -670,6 +633,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
