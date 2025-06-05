@@ -381,11 +381,14 @@ export default function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say about our mobile detailing services.</p>
+      <section id="reviews" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-6">
+              Customer Reviews
+            </div>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-slate-900 mb-6 tracking-tight">What Our Customers Say</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">Don't just take our word for it. Here's what our satisfied customers have to say about our mobile detailing services.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -436,7 +439,7 @@ export default function Home() {
               <Card key={index} className="bg-white shadow-lg border border-gray-100">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400">
+                    <div className="flex text-amber-400">
                       {[...Array(review.rating)].map((_, i) => (
                         <i key={i} className="fas fa-star"></i>
                       ))}
@@ -460,7 +463,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <div className="inline-flex items-center gap-4 bg-white rounded-lg px-6 py-4 shadow-lg">
-              <div className="flex text-yellow-400 text-xl">
+              <div className="flex text-amber-400 text-xl">
                 {[...Array(5)].map((_, i) => (
                   <i key={i} className="fas fa-star"></i>
                 ))}
