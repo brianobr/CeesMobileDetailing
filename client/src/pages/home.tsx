@@ -465,7 +465,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="text-left">
-                <div className="font-semibold text-secondary">4.9/5 Average Rating</div>
+                <div className="font-semibold text-[#0f172a]">4.9/5 Average Rating</div>
                 <div className="text-sm text-gray-600">Based on 150+ customer reviews</div>
               </div>
             </div>
