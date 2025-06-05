@@ -140,7 +140,6 @@ export default function Home() {
           </div>
         )}
       </nav>
-
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-20">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40"></div>
@@ -208,7 +207,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section id="about" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -291,7 +289,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -379,7 +376,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Reviews Section */}
       <section id="reviews" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -452,7 +448,7 @@ export default function Home() {
                       <i className="fas fa-user text-white"></i>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-secondary">{review.name}</h4>
+                      <h4 className="font-semibold text-[#0f172a]">{review.name}</h4>
                       <p className="text-sm text-gray-600">{review.title}</p>
                     </div>
                   </div>
@@ -476,7 +472,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -675,7 +670,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
