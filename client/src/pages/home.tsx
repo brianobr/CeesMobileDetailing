@@ -517,53 +517,53 @@ export default function Home() {
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName" className="text-sm font-medium text-secondary">First Name</Label>
+                      <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">First Name</Label>
                       <Input 
                         type="text" 
                         id="firstName" 
                         name="firstName" 
                         required 
-                        className="mt-2"
+                        className="mt-1"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-sm font-medium text-secondary">Last Name</Label>
+                      <Label htmlFor="lastName" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Last Name</Label>
                       <Input 
                         type="text" 
                         id="lastName" 
                         name="lastName" 
                         required 
-                        className="mt-2"
+                        className="mt-1"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className="text-sm font-medium text-secondary">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Phone Number</Label>
                     <Input 
                       type="tel" 
                       id="phone" 
                       name="phone" 
                       required 
-                      className="mt-2"
+                      className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-secondary">Email Address</Label>
+                    <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Email Address</Label>
                     <Input 
                       type="email" 
                       id="email" 
                       name="email" 
                       required 
-                      className="mt-2"
+                      className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="service" className="text-sm font-medium text-secondary">Service Interested In</Label>
+                    <Label htmlFor="service" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Service Interested In</Label>
                     <Select name="service" required>
-                      <SelectTrigger className="mt-2">
+                      <SelectTrigger className="mt-1">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
@@ -578,36 +578,36 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <Label htmlFor="vehicleInfo" className="text-sm font-medium text-secondary">Vehicle Information</Label>
+                    <Label htmlFor="vehicleInfo" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Vehicle Information</Label>
                     <Input 
                       type="text" 
                       id="vehicleInfo" 
                       name="vehicleInfo" 
                       placeholder="Year, Make, Model (e.g., 2020 Honda Accord)" 
-                      className="mt-2"
+                      className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="location" className="text-sm font-medium text-secondary">Service Location</Label>
+                    <Label htmlFor="location" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Service Location</Label>
                     <Input 
                       type="text" 
                       id="location" 
                       name="location" 
                       placeholder="Home, Office, or Other Address" 
                       required 
-                      className="mt-2"
+                      className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-secondary">Additional Details</Label>
+                    <Label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Additional Details</Label>
                     <Textarea 
                       id="message" 
                       name="message" 
                       rows={4} 
                       placeholder="Tell us about your vehicle's condition, preferred dates, or any special requests..." 
-                      className="mt-2 resize-vertical"
+                      className="mt-1 resize-vertical"
                     />
                   </div>
 
