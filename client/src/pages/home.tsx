@@ -168,10 +168,12 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-wider uppercase">
-              Unleash Premium Vehicle<br />
-              <span className="text-accent">Gloss and Surface Security</span><br />
-              With Cee's Mobile Detailing!
+              Detailing That<br />
+              <span className="text-accent">Drives Attention</span>
             </h1>
+            <p className="text-2xl md:text-3xl mb-8 font-medium leading-relaxed">
+              Shine, protection, and polish—delivered.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-12">
               <Button 
                 size="lg"
