@@ -414,7 +414,7 @@ export default function Home() {
       <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Get In Touch</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">Ready to give your car the care it deserves? Contact us today to schedule your mobile detailing service.</p>
           </div>
 
@@ -485,11 +485,11 @@ export default function Home() {
             {/* Contact Form */}
             <Card className="bg-gray-50">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-poppins font-semibold text-secondary mb-6">Request a Quote</h3>
+                <h3 className="text-2xl font-bold text-secondary mb-6">Request a Quote</h3>
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">First Name</Label>
+                      <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 mb-2 block">First Name</Label>
                       <Input 
                         type="text" 
                         id="firstName" 
@@ -499,7 +499,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="lastName" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Last Name</Label>
+                      <Label htmlFor="lastName" className="text-sm font-medium text-gray-700 mb-2 block">Last Name</Label>
                       <Input 
                         type="text" 
                         id="lastName" 
@@ -511,7 +511,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2 block">Phone Number</Label>
                     <Input 
                       type="tel" 
                       id="phone" 
@@ -522,7 +522,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Email Address</Label>
+                    <Label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2 block">Email Address</Label>
                     <Input 
                       type="email" 
                       id="email" 
@@ -533,73 +533,59 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <Label htmlFor="service" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Service Interested In</Label>
-                    <Select name="service" required>
-                      <SelectTrigger className="mt-1">
-                        <SelectValue placeholder="Select a service" />
+                    <Label htmlFor="vehicleType" className="text-sm font-medium text-gray-700 mb-2 block">Vehicle Type</Label>
+                    <Select name="vehicleType" required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select your vehicle type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="exterior">Exterior Detailing</SelectItem>
-                        <SelectItem value="interior">Interior Detailing</SelectItem>
-                        <SelectItem value="full">Full Detail Package</SelectItem>
-                        <SelectItem value="express">Express Wash</SelectItem>
-                        <SelectItem value="protection">Paint Protection</SelectItem>
-                        <SelectItem value="maintenance">Maintenance Plan</SelectItem>
+                        <SelectItem value="sedan">Sedan</SelectItem>
+                        <SelectItem value="suv">SUV</SelectItem>
+                        <SelectItem value="truck">Truck</SelectItem>
+                        <SelectItem value="coupe">Coupe</SelectItem>
+                        <SelectItem value="hatchback">Hatchback</SelectItem>
+                        <SelectItem value="luxury">Luxury Vehicle</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
-                    <Label htmlFor="vehicleInfo" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Vehicle Information</Label>
-                    <Input 
-                      type="text" 
-                      id="vehicleInfo" 
-                      name="vehicleInfo" 
-                      placeholder="Year, Make, Model (e.g., 2020 Honda Accord)" 
-                      className="mt-1"
-                    />
+                    <Label htmlFor="serviceType" className="text-sm font-medium text-gray-700 mb-2 block">Service Type</Label>
+                    <Select name="serviceType" required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select service type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="express-wash">Express Wash</SelectItem>
+                        <SelectItem value="interior-detail">Interior Detailing</SelectItem>
+                        <SelectItem value="exterior-detail">Exterior Detailing</SelectItem>
+                        <SelectItem value="full-detail">Full Detail Package</SelectItem>
+                        <SelectItem value="paint-protection">Paint Protection</SelectItem>
+                        <SelectItem value="ceramic-coating">Ceramic Coating</SelectItem>
+                        <SelectItem value="maintenance-plan">Maintenance Plan</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div>
-                    <Label htmlFor="location" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Service Location</Label>
-                    <Input 
-                      type="text" 
-                      id="location" 
-                      name="location" 
-                      placeholder="Home, Office, or Other Address" 
-                      required 
+                    <Label htmlFor="message" className="text-sm font-medium text-gray-700 mb-2 block">Additional Details</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      placeholder="Tell us about your vehicle's condition, specific concerns, or any special requests..."
                       className="mt-1"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block">Additional Details</Label>
-                    <Textarea 
-                      id="message" 
-                      name="message" 
-                      rows={4} 
-                      placeholder="Tell us about your vehicle's condition, preferred dates, or any special requests..." 
-                      className="mt-1 resize-vertical"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg text-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg"
+                    className="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 text-lg transition-all duration-200"
                   >
                     Request Quote
                   </Button>
                 </form>
-
-                <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-                  <p className="text-gray-600 mb-3">Prefer to call directly?</p>
-                  <Button asChild className="bg-accent hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105">
-                    <a href="tel:+13128984141" className="inline-flex items-center gap-2">
-                      <i className="fas fa-phone"></i>
-                      Call (312) 898-4141
-                    </a>
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -607,44 +593,49 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-secondary text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-2xl font-poppins font-bold mb-4">Cee's Mobile Detailing</h3>
-              <p className="text-gray-300 mb-4">Professional mobile car detailing and wash services that bring showroom quality results to your doorstep.</p>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-crown text-white text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">CEE'S MOBILE</h3>
+                  <p className="text-xs text-gray-300 uppercase tracking-wider">DETAILING</p>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Professional mobile car detailing and wash services that come to you. We bring showroom quality results to your doorstep with premium products and expert techniques.
+              </p>
               <div className="flex space-x-4">
                 <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <i className="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f text-white"></i>
                 </a>
                 <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-instagram text-white"></i>
                 </a>
                 <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <i className="fab fa-google"></i>
+                  <i className="fab fa-google text-white"></i>
                 </a>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                {navItems.map((item) => (
-                  <li key={item.id}>
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-gray-300 hover:text-white transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
+              <h4 className="text-lg font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li><a href="#" className="hover:text-white transition-colors">Mobile Detailing</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Paint Protection</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Ceramic Coating</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Interior Cleaning</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Express Wash</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-300">
                 <div className="flex items-center gap-3">
                   <i className="fas fa-phone text-primary"></i>
                   <a href="tel:+13128984141" className="text-gray-300 hover:text-white transition-colors">(312) 898-4141</a>
