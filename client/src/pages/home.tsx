@@ -155,7 +155,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center text-white pt-16">
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div 
           className="absolute inset-0" 
           style={{
@@ -167,11 +167,11 @@ export default function Home() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-wider uppercase">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-wider uppercase text-white drop-shadow-2xl">
               Detailing That<br />
-              <span className="text-accent">Drives Attention</span>
+              <span className="text-accent drop-shadow-lg">Drives Attention</span>
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 font-medium leading-relaxed">
+            <p className="text-2xl md:text-3xl mb-8 font-medium leading-relaxed text-white drop-shadow-lg bg-black bg-opacity-30 inline-block px-4 py-2 rounded-lg">
               Shine, protection, and polish—delivered.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-12">
