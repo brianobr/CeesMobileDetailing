@@ -81,28 +81,40 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <h1 className="text-xl font-poppins font-bold text-primary">Cee's Mobile Detailing</h1>
+          <div className="flex justify-between items-center h-20">
+            <div className="flex-shrink-0 flex items-center">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-crown text-white text-xl"></i>
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-secondary leading-tight">CEE'S MOBILE</h1>
+                  <p className="text-xs text-gray-600 uppercase tracking-wider">DETAILING</p>
+                </div>
+              </div>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                      activeSection === item.id 
-                        ? 'text-primary font-semibold' 
-                        : 'text-secondary hover:text-primary'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-medium transition-colors duration-200 uppercase tracking-wide ${
+                    activeSection === item.id 
+                      ? 'text-accent font-bold border-b-2 border-accent pb-1' 
+                      : 'text-secondary hover:text-accent'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+              <Button
+                asChild
+                className="bg-accent hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-none text-sm transition-all duration-200 uppercase tracking-wide"
+              >
+                <a href="tel:+13128984141">Get in Touch</a>
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -142,193 +154,138 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-blue-800 text-white pt-16">
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center text-white pt-16">
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1619767886558-efdc259cde1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         ></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-poppins font-bold mb-6 leading-tight">
-            Premium Mobile Car Detailing
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Professional car detailing and wash services that come to you. We bring showroom quality results to your doorstep.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-              className="bg-accent hover:bg-yellow-500 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-            >
-              Book Service Now
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200"
-            >
-              <a href="tel:+13128984141" className="flex items-center gap-2">
-                <i className="fas fa-phone"></i>
-                Call (312) 898-4141
-              </a>
-            </Button>
-          </div>
-          <div className="flex justify-center items-center gap-8 text-sm opacity-90">
-            <div className="flex items-center gap-2">
-              <i className="fas fa-clock"></i>
-              <span>Open 24 Hours Most Days</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <i className="fas fa-mobile-alt"></i>
-              <span>Mobile Service</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-wider uppercase">
+              Unleash Premium Vehicle<br />
+              <span className="text-accent">Gloss and Surface Security</span><br />
+              With Cee's Mobile Detailing!
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-4 mt-12">
+              <Button 
+                size="lg"
+                asChild
+                className="bg-accent hover:bg-yellow-500 text-black font-bold py-4 px-8 rounded-none text-lg transition-all duration-200 uppercase tracking-wide"
+              >
+                <a href="tel:+13128984141">Call (312) 898-4141</a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollToSection('services')}
+                className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-8 rounded-none text-lg transition-all duration-200 uppercase tracking-wide"
+              >
+                View Our Services
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-neutral">
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">About Cee's Mobile Detailing</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Professional car detailing and wash services with a commitment to excellence and customer satisfaction.</p>
+          <div className="text-center mb-4">
+            <p className="text-accent font-semibold tracking-wide uppercase mb-2">Chicago's Highly Rated Mobile Detailing Service</p>
+            <div className="w-16 h-1 bg-accent mx-auto mb-8"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional car detailing service" 
-                className="rounded-xl shadow-lg w-full h-auto"
-              />
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
+                Drive Away in a Professionally Detailed and Protected Ride!
+              </h2>
+              <div className="w-20 h-1 bg-accent mb-6"></div>
+              <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                The trust that a vehicle owner puts in the hands of professional detailers is not something to ever be taken lightly. This is their pride and joy, direct mode of transportation, and something that they value as an asset, just as much as they view their home or other personal artifacts.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Since we became an established mobile detailing service, Cee's Mobile Detailing has collected vehicle enhancement credentials through extensive product training and hands-on experience. We specialize in ceramic coating applications, paint protection services, and comprehensive detailing packages.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                With our mobile service covering Chicago and surrounding areas, we are able to serve many cars, trucks, SUVs, and other vehicles throughout the region. We do not limit our detailing capabilities, as we want each and every vehicle owner to drive something they can truly be proud of for years to come.
+              </p>
+              <Button 
+                size="lg"
+                asChild
+                className="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-none text-lg transition-all duration-200 uppercase tracking-wide"
+              >
+                <a href="tel:+13128984141">Call (312) 898-4141</a>
+              </Button>
             </div>
             
-            <div className="space-y-6">
-              <h3 className="text-2xl font-poppins font-semibold text-secondary">Your Trusted Mobile Car Care Specialists</h3>
-              <p className="text-gray-600 leading-relaxed">
-                At Cee's Mobile Detailing and Car Wash, we bring professional automotive care directly to your location. Our experienced team uses premium products and techniques to restore and protect your vehicle's appearance.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <i className="fas fa-award text-white"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary">Premium Quality</h4>
-                    <p className="text-sm text-gray-600">Professional-grade products</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <i className="fas fa-clock text-white"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary">Convenient Hours</h4>
-                    <p className="text-sm text-gray-600">Open 24 hours most days</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                    <i className="fas fa-mobile-alt text-white"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary">Mobile Service</h4>
-                    <p className="text-sm text-gray-600">We come to you</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
-                    <i className="fas fa-handshake text-white"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary">Satisfaction Guaranteed</h4>
-                    <p className="text-sm text-gray-600">100% customer focus</p>
-                  </div>
-                </div>
-              </div>
+            <div className="order-1 md:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                alt="Professional car detailing service showing premium results" 
+                className="w-full h-auto shadow-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Complete mobile car detailing and wash services tailored to keep your vehicle looking its best.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">At Cee's Mobile Detailing, You Receive Top-Tier Car Care</h2>
+            <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: "fas fa-car",
-                title: "Exterior Detailing",
-                description: "Complete exterior wash, clay bar treatment, polishing, and protective wax application for a showroom finish.",
-                features: ["Hand wash and dry", "Clay bar treatment", "Paint correction", "Wax and sealant application"],
-                color: "bg-primary"
+                title: "Paint Protection Film (PPF)",
+                description: "Lock pristine auto paintwork behind a self-healing and gloss-enhancing paint protection film! Our team specializes in premium Clear Bra products, providing the necessary maintenance efforts that help them stop swirls, scratches, and more.",
+                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               },
               {
-                icon: "fas fa-chair",
-                title: "Interior Detailing", 
-                description: "Deep cleaning and conditioning of all interior surfaces including seats, carpets, dashboard, and trim.",
-                features: ["Vacuum and steam cleaning", "Leather conditioning", "Dashboard and trim care", "Glass cleaning"],
-                color: "bg-accent"
+                title: "Ceramic Coating",
+                description: "Hand-applied by automotive artists and experts, our ceramic coating packages deliver some of the slickest surface hydrophobicity and diamond-like shine to all cars, trucks, and SUVs. Get a professional auto ceramic coating and see the difference it makes in your vehicle's value!",
+                image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               },
               {
-                icon: "fas fa-star",
-                title: "Full Detail Package",
-                description: "Complete interior and exterior detailing service for the ultimate car care experience.",
-                features: ["Complete exterior detail", "Complete interior detail", "Engine bay cleaning", "Tire and rim care"],
-                color: "bg-green-500"
+                title: "Mobile Detailing",
+                description: "Even through all the sunshine and rather temperate environment, there is still a slew of contamination that affects paintwork and wheels while sneaking inside with every passenger. Professional exterior and interior vehicle detailing services will handle all of these issues.",
+                image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               },
               {
-                icon: "fas fa-tint",
-                title: "Express Wash",
-                description: "Quick and efficient wash service perfect for regular maintenance between full details.",
-                features: ["Exterior wash and rinse", "Wheel and tire cleaning", "Quick interior vacuum", "Window cleaning"],
-                color: "bg-purple-500"
-              },
-              {
-                icon: "fas fa-shield-alt",
-                title: "Paint Protection",
-                description: "Advanced protective coatings and treatments to preserve your vehicle's paint and finish.",
-                features: ["Ceramic coating application", "Paint protection film", "Long-term protection", "UV damage prevention"],
-                color: "bg-red-500"
-              },
-              {
-                icon: "fas fa-calendar-check",
-                title: "Maintenance Plans",
-                description: "Regular scheduled detailing services to keep your vehicle in pristine condition year-round.",
-                features: ["Weekly wash services", "Monthly detail packages", "Seasonal protection", "Priority scheduling"],
-                color: "bg-indigo-500"
+                title: "Express Wash & Maintenance",
+                description: "Protection efforts for a vehicle traditionally go beyond detailing and surface sealants. Our express wash packages create a shield for your automobile, maintaining that fresh, clean appearance between full detail services.",
+                image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               }
             ].map((service, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className={`w-16 h-16 ${service.color} rounded-full flex items-center justify-center mb-4`}>
-                    <i className={`${service.icon} text-white text-2xl`}></i>
-                  </div>
-                  <h3 className="text-xl font-poppins font-semibold text-secondary mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx}>• {feature}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div key={index} className="group">
+                <div className="relative overflow-hidden mb-6">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+                <h3 className="text-xl font-bold text-secondary mb-4">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+                <Button 
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  Learn More
+                </Button>
+              </div>
             ))}
           </div>
 
@@ -345,11 +302,14 @@ export default function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-gray-50">
+      <section id="reviews" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-secondary mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our satisfied customers have to say about our mobile detailing services.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">Cee's Mobile Detailing - Committed to Quality & Your Experience</h2>
+            <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Cee's Mobile Detailing is a top-rated car care service located in Chicago. Our team of skilled technicians is dedicated to providing honest and reliable service to our clients. We understand that caring for your car can be overwhelming, which is why we make it our mission to educate our clients on the best practices for keeping their vehicles in top condition.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
