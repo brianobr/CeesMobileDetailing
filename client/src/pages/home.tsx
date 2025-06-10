@@ -199,7 +199,7 @@ export default function Home() {
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4">
-            <p className="text-accent font-semibold tracking-wide uppercase mb-2">Chicago's Highly Rated Mobile Detailing Service</p>
+            <p className="text-accent font-semibold tracking-wide uppercase mb-2">Little Elm's Highly Rated Mobile Detailing Service</p>
             <div className="w-16 h-1 bg-accent mx-auto mb-8"></div>
           </div>
 
@@ -216,7 +216,7 @@ export default function Home() {
                 Since we became an established mobile detailing service, Cee's Mobile Detailing has collected vehicle enhancement credentials through extensive product training and hands-on experience. We specialize in ceramic coating applications, paint protection services, and comprehensive detailing packages.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                With our mobile service covering Chicago and surrounding areas, we are able to serve many cars, trucks, SUVs, and other vehicles throughout the region. We do not limit our detailing capabilities, as we want each and every vehicle owner to drive something they can truly be proud of for years to come.
+                With our mobile service operating out of Little Elm and covering most North Dallas cities, we are able to serve many cars, trucks, SUVs, and other vehicles throughout the region. We do not limit our detailing capabilities, as we want each and every vehicle owner to drive something they can truly be proud of for years to come.
               </p>
               <Button 
                 size="lg"
@@ -310,7 +310,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">Cee's Mobile Detailing - Committed to Quality & Your Experience</h2>
             <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Cee's Mobile Detailing is a top-rated car care service located in Chicago. Our team of skilled technicians is dedicated to providing honest and reliable service to our clients. We understand that caring for your car can be overwhelming, which is why we make it our mission to educate our clients on the best practices for keeping their vehicles in top condition.
+              Cee's Mobile Detailing is a top-rated car care service operating out of Little Elm and serving most North Dallas cities. Our team of skilled technicians is dedicated to providing honest and reliable service to our clients. We understand that caring for your car can be overwhelming, which is why we make it our mission to educate our clients on the best practices for keeping their vehicles in top condition.
             </p>
           </div>
 
@@ -441,10 +441,8 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-secondary mb-2">Business Hours</h3>
                   <div className="space-y-1 text-gray-600">
-                    <p><span className="font-medium">Monday:</span> Open 24 hours</p>
-                    <p><span className="font-medium">Tuesday - Friday:</span> Open 24 hours</p>
-                    <p><span className="font-medium">Saturday:</span> 7:00 AM - 7:30 PM</p>
-                    <p><span className="font-medium">Sunday:</span> Closed</p>
+                    <p><span className="font-medium">Daily:</span> Daylight hours, 7 days a week</p>
+                    <p className="text-sm italic">Operating hours vary by season and daylight availability</p>
                   </div>
                 </div>
               </div>
