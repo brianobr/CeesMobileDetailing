@@ -24,6 +24,10 @@ jobs:
         run: |
           git config --global --unset-all http.https://github.com/.extraheader || true
           git config --global --add safe.directory /github/workspace
+      - name: Copy Static Web App Config
+        run: |
+          mkdir -p dist/public
+          cp staticwebapp.config.json dist/public/ || true
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -34,7 +38,7 @@ jobs:
           app_location: "/"
           api_location: ""
           output_location: "dist/public"
-          app_build_command: "npm install && npm run build"
+          app_build_command: "npm install && npm run build && cp staticwebapp.config.json dist/public/"
           skip_api_build: true
 
   close_pull_request_job:
