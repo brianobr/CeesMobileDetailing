@@ -251,7 +251,7 @@ export default function Home() {
               {
                 title: "Paint Protection Film (PPF)",
                 description: "Lock pristine auto paintwork behind a self-healing and gloss-enhancing paint protection film! Our team specializes in premium Clear Bra products, providing the necessary maintenance efforts that help them stop swirls, scratches, and more.",
-                image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               },
               {
                 title: "Ceramic Coating",
