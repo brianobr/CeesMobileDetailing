@@ -168,8 +168,8 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-wider uppercase text-white drop-shadow-2xl">
-              Detailing That<br />
-              <span className="text-accent drop-shadow-lg">Drives Attention</span>
+              <span itemProp="name">Detailing That<br />
+              <span className="text-accent drop-shadow-lg">Drives Attention</span></span>
             </h1>
             <p className="text-2xl md:text-3xl mb-8 font-medium leading-relaxed text-white drop-shadow-lg bg-black bg-opacity-30 inline-block px-4 py-2 rounded-lg">
               Shine, protection, and polish—delivered.
@@ -642,7 +642,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <i className="fas fa-clock text-primary"></i>
-                  <span className="text-gray-300">Open 24 Hours Most Days</span>
+                  <span className="text-gray-300">Daylight Hours, 7 Days a Week</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <i className="fas fa-mobile-alt text-primary"></i>
@@ -652,8 +652,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-600 mt-8 pt-8 text-center">
-            <p className="text-gray-300">&copy; 2024 Cee's Mobile Detailing and Car Wash. All rights reserved.</p>
+          <div className="border-t border-gray-600 mt-8 pt-8">
+            <div className="grid md:grid-cols-2 gap-4 items-center">
+              <div className="text-center md:text-left">
+                <p className="text-gray-300">&copy; 2025 Cee's Mobile Detailing and Car Wash. All rights reserved.</p>
+              </div>
+              <div className="text-center md:text-right">
+                <nav className="flex flex-wrap justify-center md:justify-end gap-4 text-sm">
+                  <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors">About</button>
+                  <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-white transition-colors">Services</button>
+                  <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors">Contact</button>
+                  <a href="/sitemap.xml" className="text-gray-300 hover:text-white transition-colors">Sitemap</a>
+                </nav>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
